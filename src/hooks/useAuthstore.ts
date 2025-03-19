@@ -13,9 +13,6 @@ interface AuthStore {
 export const useAuthstore = create<AuthStore>((set)=>({
     user: null,
     login: (email, password) =>{
-        if(password.length < 8){
-            return false;
-        }
         set({user: {email, password}});
         return true;
     },
